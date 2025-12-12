@@ -1,4 +1,36 @@
 # Lab 2: Comparative Analysis of Vision Architectures
+Key Learnings and Insights:
+1. Architecture-Specific Strengths and Weaknesses
+CNNs: Demonstrated exceptional efficiency and accuracy (>99%) on the MNIST dataset due to inherent inductive biases (translation invariance, local feature focus). Their convolutional operations are computationally efficient and perfectly suited for structured, grid-like data.
+
+Vision Transformers: Achieved only ~76% accuracy when trained from scratch on MNIST, revealing their critical dependency on large-scale datasets. Without the spatial biases of CNNs, ViTs must learn visual concepts entirely from data, making them suboptimal for small datasets despite their state-of-the-art performance on large benchmarks.
+
+Pre-trained Models (VGG16/AlexNet): Achieved excellent accuracy through transfer learning but at tremendous computational cost (57M-134M parameters), illustrating the concept of "overkill" for simple tasks while highlighting the value of pre-trained features for complex visual understanding.
+
+2. Practical Implementation Skills
+PyTorch Proficiency: Gained extensive experience with PyTorch's model definition, training loops, GPU utilization, and evaluation metrics.
+
+Model Debugging: Learned to trace dimensional transformations through complex architectures (especially important for ViTs with their patch embeddings and attention mechanisms).
+
+Comparative Evaluation: Implemented systematic comparison using multiple metrics (accuracy, F1-score, training time, parameter count) to make informed architectural choices.
+
+3. Computational Trade-offs
+Discovered that parameter count doesn't directly correlate with performance for a given task (ViT had fewest parameters but longest training time).
+
+Training time complexity: ViTs showed quadratic computation in self-attention mechanisms compared to CNNs' linear convolutional operations.
+
+Memory vs. accuracy trade-offs: Pre-trained models consumed significant memory for marginal accuracy gains on simple tasks.
+
+4. The Data-Architecture Fit Principle
+The most significant learning was that no architecture is universally superior. The optimal choice depends entirely on:
+
+Dataset size and complexity (small/structured vs. large/complex)
+
+Available computational resources
+
+Task requirements (accuracy vs. speed vs. memory constraints)
+
+# Lab 2: Comparative Analysis of Vision Architectures
 
 ## 📋 Project Overview
 This laboratory explores and compares multiple computer vision architectures on the MNIST dataset:
